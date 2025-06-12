@@ -10,7 +10,8 @@ public class StoreApplication {
 
 		//SpringApplication.run(StoreApplication.class, args);
 
-		var orderService = new OrderService(new PayPalPaymentService());
+		var orderService = new OrderService();
+		orderService.setPaymentService(new PayPalPaymentService());
 		orderService.placeOrder();
 	}
 
